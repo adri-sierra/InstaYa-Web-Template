@@ -7,6 +7,7 @@ import {
 	NewRequest,
 	action as newRequestAction,
 } from './client/Requests/NewRequest';
+import UpdateRequest from './client/Requests/UpdateRequest';
 
 function RootLayout() {
 	return (
@@ -55,6 +56,10 @@ export const appRoutes = [
 								element: <ProtectedRoute route={<NewRequest />} />,
 								action: newRequestAction,
 							},
+							{
+								path:":serviceNumber",
+								element:<ProtectedRoute route={<UpdateRequest/>} />
+							}
 						],
 					},
 				],
